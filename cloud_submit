@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# this is just a wrapper for condor_submit to make it easy to specify different
+# collection files.
+#
+echo
+echo "Use as: ./cloud_submit my_coll_file (do not include .tcl"
+echo 
+
+# 
+# locate TCL file 
+# 
+#export TCLFILE=$1
+#echo Test if file exists : $TCLFILE 
+#if [ ! -e $TCLFILE ] 
+#then
+# echo $TCLFILE does not exist. Exiting.
+# return
+#else
+# echo $TCLFILE exists;
+#export TCLFN=$1
+#fi
+
+#
+# test if link to tcl file exists
+#
+#echo
+#echo "Make a link to the TCL (test if already exists)" 
+#if [ -h $1.tcl ]
+#then
+# echo Removing link to TCL file : $1.tcl
+# rm $1.tcl
+#fi
+##
+export COLL_FILE=$1.tcl
+export WORKDIR=$PWD
+#ln -s ${TCLFILE} 
+
+#
+# change name of executable (as a way to change the job name)
+#
+export MYEXEC=$1.sh
+if [ ! -h $MYEXEC ]
+then
+ echo "Link to excutable file does not exist : ${MYEXEC}  (will make it)"
+ ln runBetaMini.sh $MYEXEC
+fi
+
+
+echo
+echo Issuing condor_submit
+condor_submit a52.condor -spool -a "transfer_input_files=${1}.tcl" -a "executable=${MYEXEC}"
+
+
+
+
+
+

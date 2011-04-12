@@ -1,0 +1,31 @@
+#condor job script for analysis-51
+
+Universe	        =	vanilla
+Log		        =	log-$(Cluster).$(Process)
+Output		        =	out-$(Cluster).$(Process)
+Error		        =	err-$(Cluster).$(Process)
+Input	       	        =	a52.tcl
+should_transfer_files	=	YES
+when_to_transfer_output	=	ON_EXIT
+environment	        =	CLUSTERID=$(Cluster)
+x509userproxy           =       /tmp/x509up_u34244
+
+
+Requirements = VMType =?= "testvm2" && (Arch == "INTEL" || Arch == "X86_64")
++VMName		=	"testvm.gz"
++VMLoc          =       "http://vmrepo.cloud.nrc.ca/api/images/raw/fransham/testvm2.gz"
++VMCPUArch	=	"x86"
++VMStorage	=	"1"
++VMCPUCores	=	"1"
++VMMem		=	"2555"
++VMAMI		=	"ami-64ea1a0d"
++VMInstanceType =	"m1.small"
++VMJobPerCore   =       True
++CSMyProxyServer = "myproxy.cloud.nrc.ca"
++CSMyProxyCredsName = "fransham"
++TargetClouds   = "NRC"
+
+getenv		=	True
+
+Queue
+
