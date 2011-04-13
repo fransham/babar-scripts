@@ -22,7 +22,7 @@ Requirements = VMType =?= "testvm2" && (Arch == "INTEL" || Arch == "X86_64")
 +VMInstanceType =	"m1.small"
 +VMJobPerCore   =       True
 +CSMyProxyServer = "myproxy.cloud.nrc.ca"
-+CSMyProxyCredsName = "fransham"
++CSMyProxyCredsName = "fransham.condor"
 +TargetClouds   = "NRC"
 
 getenv		=	True
