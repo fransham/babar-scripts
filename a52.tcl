@@ -4,7 +4,8 @@ set levelOfDetail "cache"
 set ConfigPatch   "Run1"
 set BetaMiniTuple "root"
 set histFileName  output-$env(CLUSTERID).root
-set PrintFreq 1000
+set printFreq 1000
+set NEvent    5000
 
 sourceFoundFile BetaMiniUser/MyMiniAnalysis.tcl
 
