@@ -12,7 +12,7 @@ x509userproxy           =       /tmp/x509up_u34244
 
 
 Requirements = VMType =?= "testvm2" && (Arch == "INTEL" || Arch == "X86_64")
-+VMName		=	"testvm.gz"
++VMName		=	"testvm2"
 +VMLoc          =       "http://vmrepo.cloud.nrc.ca/api/images/raw/fransham/testvm2"
 +VMCPUArch	=	"x86"
 +VMStorage	=	"1"
