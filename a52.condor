@@ -15,7 +15,7 @@ Requirements = VMType =?= "testvm2" && (Arch == "INTEL" || Arch == "X86_64")
 +VMName		=	"testvm2"
 +VMLoc          =       "http://vmrepo.cloud.nrc.ca/api/images/raw/fransham/testvm2"
 +VMCPUArch	=	"x86"
-+VMStorage	=	"1"
++VMStorage	=	"20"
 +VMCPUCores	=	"1"
 +VMMem		=	"2555"
 +VMAMI		=	"ami-64ea1a0d"
